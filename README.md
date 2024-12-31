@@ -7,3 +7,7 @@ Please note that the Bank of Canada FXUSDCAD.bas  requires the JsonConverter.bas
 
 **Credit**: https://github.com/VBA-tools/VBA-JSON
 JsonConverter.bas
+
+##BulkXLSXtoCSV
+**PURPOSE**: TO CONVERT XLSX FILES TO CSV
+
