@@ -35,7 +35,7 @@ Sub BulkXLSXtoCSV()
         wsName = GetWorksheetName(LCase(fileName))
         
         'COPY THE DETERMINED WORKSHEET AND SAVE AS CSV
-        On Error Resume Next ' Handle potential errors if the worksheet does not exist
+        On Error Resume Next ' HANDLE POTENTIAL ERRORS IF THE WORKSHEET DOES NOT EXIST 
             For x = LBound(wsName) To UBound(wsName) Step 1
                 If wsName(x) = "Default" Then
                     Set ws = wb.Worksheets(1)
