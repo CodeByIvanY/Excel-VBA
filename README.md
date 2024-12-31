@@ -10,4 +10,5 @@ JsonConverter.bas
 
 ## BulkXLSXtoCSV
 **PURPOSE**: TO CONVERT MULITPLE XLSX FILES INTO CSV.
+
 By iterating through all the XLSX files in a specified folder, determining which worksheet to copy based on the file name, and then saving that worksheet as a CSV file.
