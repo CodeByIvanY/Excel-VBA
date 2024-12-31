@@ -8,6 +8,6 @@ Please note that the Bank of Canada FXUSDCAD.bas  requires the JsonConverter.bas
 **Credit**: https://github.com/VBA-tools/VBA-JSON
 JsonConverter.bas
 
-##BulkXLSXtoCSV
-**PURPOSE**: TO CONVERT XLSX FILES TO CSV
-
+## BulkXLSXtoCSV
+**PURPOSE**: TO CONVERT MULITPLE XLSX FILES INTO CSV.
+By iterating through all the XLSX files in a specified folder, determining which worksheet to copy based on the file name, and then saving that worksheet as a CSV file.
