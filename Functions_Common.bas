@@ -1,3 +1,4 @@
+'PURPSE: TURN OFF/ON EXCEL APPLICATION SETTINGS FOR FASTER EXECUTION.
 Public Sub TurnOffApp()
     With Application
         .DisplayAlerts = False
