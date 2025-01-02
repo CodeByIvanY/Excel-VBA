@@ -27,3 +27,4 @@ BubbleSrt = ArrayIn
 End Function
 
 Array2Sort = BubbleSrt(Array2Sort, True)
+'True being sort as Ascending. False will sort Decending
