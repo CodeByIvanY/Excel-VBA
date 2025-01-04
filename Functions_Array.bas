@@ -1,3 +1,4 @@
+'True being sort as Ascending. False will sort Decending
 Public Function BubbleSrt(ArrayIn, Ascending As Boolean)
 Dim SrtTemp As Variant
 Dim i As Long
@@ -27,7 +28,6 @@ BubbleSrt = ArrayIn
 End Function
 
 Array2Sort = BubbleSrt(Array2Sort, True)
-'True being sort as Ascending. False will sort Decending
 '***********************************************************************************************
 'BREAK ALL LINKS
 Sub BreakAllLinks()
