@@ -1,8 +1,7 @@
 'True being sort as Ascending. False will sort Decending
 Public Function BubbleSrt(ArrayIn, Ascending As Boolean)
 Dim SrtTemp As Variant
-Dim i As Long
-Dim j As Long
+Dim i As Long, j As Long
 If Ascending = True Then
     For i = LBound(ArrayIn) To UBound(ArrayIn)
          For j = i + 1 To UBound(ArrayIn)
