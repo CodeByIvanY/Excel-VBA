@@ -47,7 +47,7 @@ Function F_DictList(wsName As String, Col_Key As String, Col_Item As String, Sta
         If .FilterMode = True Then
         .ShowAllData
         End If
-        lastRow = .Cells(Rows.Count, Col_LastRow).End(xlUp).Row
+        lastRow = .Cells(.Rows.Count, Col_LastRow).End(xlUp).Row
         For y = StartRow To lastRow Step 1
             If Col_Key2 = "0" Then
                 Str_Key = .Cells(y, Col_Key).Value
