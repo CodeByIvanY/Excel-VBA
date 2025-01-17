@@ -21,3 +21,9 @@ End Sub
 
 Call TurnOffApp
 Call TurnOnApp
+
+
+Function WorksheetExists(wsName As String, wb As Workbook) As Boolean
+    On Error Resume Next
+    WorksheetExists = (wb.Worksheets(wsName).Name = wsName)
+End Function
