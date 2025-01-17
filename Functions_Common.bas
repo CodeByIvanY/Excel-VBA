@@ -22,7 +22,7 @@ End Sub
 Call TurnOffApp
 Call TurnOnApp
 
-
+'PURPOSE: CHECKS IF A WORKSHEET EXISTS IN A GIVEN WORKBOOK
 Function WorksheetExists(wsName As String, wb As Workbook) As Boolean
     On Error Resume Next
     WorksheetExists = (wb.Worksheets(wsName).Name = wsName)
