@@ -115,7 +115,8 @@ Sub CompletenessCheck()
         wb.Close False
         FileName = Dir
     Loop
-    
+
+    Dim Arr_data As Variant
     'PREPARE EAGLE/NEXEN DATA FOR OUTPUT
     lastRow = dict_data.Count
     If OptReport = "Eagle Reports" Then
@@ -139,7 +140,7 @@ Sub CompletenessCheck()
     End If
     
     'CLEAN UP TIME FORMAT IN THE OUTPUT RANGE
-    Set Rng = cws.Range(cws.Cells(2, 1), cws.Cells(lastRow, x))
+    Set Rng = cws.Range(cws.Cells(2, 1), cws.Cells(lastRow + 2, x))
     Rng.Replace "12:00:00 AM", Replacement:=""
     
     Call TurnOnApp
