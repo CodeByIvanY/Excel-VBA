@@ -1,3 +1,15 @@
+
+With Application.FileDialog(msoFileDialogSaveAs)
+     .show
+
+
+End with
+
+'msoFileDialogFilePicker	3	File Picker dialog box.
+'msoFileDialogFolderPicker	4	Folder Picker dialog box.
+'msoFileDialogOpen	1	Open dialog box.
+'msoFileDialogSaveAs	2	Save As dialog box.
+
 Sub UseFileDialogOpen() 
  
     Dim lngCount As Long 
