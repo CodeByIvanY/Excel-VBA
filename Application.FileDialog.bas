@@ -1,10 +1,19 @@
 
 With Application.FileDialog(msoFileDialogFilePicker)
      .Title = "Select File"
+
+     'Empty the list by clearing the FileDialogFilters collection. 
+     .Filters.Clear
+
+     'Add a filter that includes all excel files. 
+     .Filters.Add "Excel files","*.xlsx; *.csv; *xls; *xlsm", 1
+     
+     'Use the Show method to display the File Picker dialog box and return the user's action. 
      If .Show = -1 Then
           FilePath = .SelectedItems(0)
      Else
-
+          MsgBox "No File Selected"
+          Exit Sub
      End If
 
 End with
