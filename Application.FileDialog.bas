@@ -3,7 +3,7 @@ With Application.FileDialog(msoFileDialogFilePicker)
      .Title = "Select File"
 
      'Set the initial path to the C:\ drive. 
-     。InitialFileName = "C:\"
+     .InitialFileName = "C:\"
 
      'Change the text on the button. 
      .ButtonName = "Archive" 
