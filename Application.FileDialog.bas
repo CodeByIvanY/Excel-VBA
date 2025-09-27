@@ -1,6 +1,6 @@
 
 With Application.FileDialog(msoFileDialogFilePicker)
-     .Title = "Select File"
+     .Title = "Select a File"
 
      'Set the initial path to the C:\ drive. 
      .InitialFileName = "C:\"
