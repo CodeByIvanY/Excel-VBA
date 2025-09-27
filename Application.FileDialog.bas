@@ -1,7 +1,11 @@
 
-With Application.FileDialog(msoFileDialogSaveAs)
-     .show
+With Application.FileDialog(msoFileDialogFilePicker)
+     .Title = "Select File"
+     If .Show = -1 Then
+          FilePath = .SelectedItems(0)
+     Else
 
+     End If
 
 End with
 
