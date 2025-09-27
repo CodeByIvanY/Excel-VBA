@@ -23,17 +23,14 @@ End with
 'msoFileDialogOpen	1	Open dialog box.
 'msoFileDialogSaveAs	2	Save As dialog box.
 
-Sub UseFileDialogOpen() 
  
-    Dim lngCount As Long 
-    ' Open the file dialog 
-    With Application.FileDialog(msoFileDialogOpen) 
-        .AllowMultiSelect = True 
-        .Show 
-        ' Display paths of each file selected 
-        For lngCount = 1 To .SelectedItems.Count 
-            MsgBox .SelectedItems(lngCount) 
-        Next lngCount 
-    End With 
- 
-End Sub
+With Application.FileDialog(msoFileDialogOpen) 
+     'Allow the selection of multiple file. 
+     .AllowMultiSelect = True
+     .Show 
+     ' Display paths of each file selected 
+     For lngCount = 1 To .SelectedItems.Count 
+          MsgBox .SelectedItems(lngCount) 
+     Next lngCount 
+End With 
+
