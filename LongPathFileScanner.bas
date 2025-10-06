@@ -1,3 +1,7 @@
+'Macro - LongPathFileScanner
+'Created by: Ivan Yang
+'Created Date: 10/06/2025
+'Purpose: A VBA utility that scans and lists .xlsx files in directories with paths exceeding the 256-character limit, using Windows API for extended path support.
 
 Private Declare PtrSafe Function FindFirstFileW Lib "kernel32" (ByVal lpFileName As LongPtr, lpFindFileData As WIN32_FIND_DATA) As LongPtr
 Private Declare PtrSafe Function FindNextFileW Lib "kernel32" (ByVal hFindFile As LongPtr, lpFindFileData As WIN32_FIND_DATA) As Long
