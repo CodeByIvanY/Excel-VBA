@@ -39,3 +39,14 @@ Function ColLetter(colNum As Long) As String
     Loop While colNum > 0
     ColLetter = iResult
 End Function
+
+    'APPLY BORDERS TO ALL SPECIFIED EDGES OF THE RANGE
+    Dim edge As Variant
+    For Each edge In Array(xlEdgeLeft, xlEdgeTop, xlEdgeBottom, xlEdgeRight, xlInsideVertical, xlInsideHorizontal)
+        With rng.Borders(edge)
+            .LineStyle = xlContinuous
+            .TintAndShade = 0
+            .ColorIndex = 0 'DEFAULT BLACK COLOR
+            .Weight = xlThin
+        End With
+    Next edge
