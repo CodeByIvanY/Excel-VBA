@@ -73,20 +73,38 @@ Function HighlightGreaterABSOnesAndErrors(rng As Range)
     End With
 End Function
 
-Function ApplyHeaderFormatting(rng As Range, Optional headerData As Variant, Optional fillColor As Long = -1)
+Sub ApplyHeaderFormatting(rng As Range, _
+                          Optional headerData As Variant, _
+                          Optional InteriorColor As Long = -1, _
+                          Optional FontColor As Long = -1, _
+                          Optional HorizontalAlignment As XlHAlign = xlLeft)
+
     ' APPLY HEADER FORMATTING WITH OPTIONAL HEADER VALUES AND COLOR
     With rng
+        ' SSET HEADER TEXT IF PROIVIDED
         If Not IsMissing(headerData) Then
             .Value = headerData
         End If
-        If fillColor = -1 Then
-            .Interior.Color = RGB(255, 192, 0) '
+        
+        ' APPLY FILL COLOR DEFAULT - GOLD
+        If InteriorColor = -1 Then
+            .Interior.Color = RGB(255, 192, 0)
         Else
-            .Interior.Color = fillColor
+            .Interior.Color = InteriorColor
         End If
+        
+        If FontColor <> -1 Then
+        Else
+            .Font.Color = RGB(255, 192, 0)
+        End If
+        ' APPLY FONT AND DEFAULT
         .Font.Bold = True
+        .HorizontalAlignment = HorizontalAlignment
     End With
-End Function
+End Sub
+
+
+
 
 
 
