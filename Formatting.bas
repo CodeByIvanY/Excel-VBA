@@ -87,13 +87,14 @@ Sub ApplyHeaderFormatting(rng As Range, _
         End If
         
         ' APPLY FILL COLOR DEFAULT - GOLD
-        If InteriorColor = -1 Then
-            .Interior.Color = RGB(255, 192, 0)
+        If InteriorColor <> -1 Then
+            .Interior.Color = Interior
         Else
-            .Interior.Color = InteriorColor
+            Color.Interior.Color = RGB(255, 192, 0)
         End If
         
         If FontColor <> -1 Then
+            .Font.Color = FontColor
         Else
             .Font.Color = RGB(255, 192, 0)
         End If
