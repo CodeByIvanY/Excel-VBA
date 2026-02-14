@@ -43,4 +43,22 @@ End With
 Dim FSO As Object: Set FSO = CreateObject("Scripting.FileSystemObject")
 FileCount = FSO.GetFolder(iFolderPath).Files.Count
 
+Function iFileCount(iFolderPath As String, Optional Extension As String = "*") As Integer
+    Dim iFileName As String
+    iFileCount = 0
+    If Right(FolderPath, 1) <> "\" Then
+        iFolderPath = iFolderPath & "\"
+    End If
+    If Extension = "*" Then
+        iFileName = Dir(iFolderPath & "*.*")
+    Else
+        FiileName = Dir(iFolderPath & "*." & Extension)
+    End If
+    
+    Do While iFileName <> ""
+        iFileCount = iFileCount + 1
+        iFileName = Dir
+    Loop
+End Function
+
 
