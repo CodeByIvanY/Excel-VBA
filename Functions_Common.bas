@@ -73,3 +73,7 @@ Function iMaxArr(arr() as Double) as Double
     Next X
 End Function
 
+
+'iSum
+Function iSum(cws as Worksheet, ) as Double
+
