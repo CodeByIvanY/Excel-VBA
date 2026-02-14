@@ -9,6 +9,17 @@ Function iMax(ParamArray args() As Variant) as Double
     Next X
 End Function
 
+Function iMin(ParamArray args() As Variant) as Double
+    Dim x As Long
+    iMax = args(0)
+    For x = 1 To Ubound(args)
+        If args(x) < iMax Then
+            iMax = args(x)
+        End If
+    Next X
+End Function
+
+
 Function iMaxArr(arr() as Double) as Double
     Dim x As Byte
     iMax = arr(0)
