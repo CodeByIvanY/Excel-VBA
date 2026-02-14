@@ -50,7 +50,8 @@ End Function
             .Weight = xlThin
         End With
     Next edge
-'iMax is a user-defined VBA function that accepts a variable number of arguments using ParamArray and returns the largest numeric value passed to the function.
+
+'iMax accepts a variable number of arguments using ParamArray and returns the largest numeric value.
 Function iMax(ParamArray args() As Variant) as Double
     Dim x As Long
     iMax = args(0)
