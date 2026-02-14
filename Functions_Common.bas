@@ -51,6 +51,7 @@ End Function
         End With
     Next edge
 
+
 'iMax accepts a variable number of arguments using ParamArray and returns the largest numeric value.
 Function iMax(ParamArray args() As Variant) as Double
     Dim x As Long
