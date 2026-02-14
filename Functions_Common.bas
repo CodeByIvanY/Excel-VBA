@@ -74,6 +74,20 @@ Function iMaxArr(arr() as Double) as Double
 End Function
 
 
-'iSum
-Function iSum(cws as Worksheet, ) as Double
+'iSum is to calculate the total of values in a specified worksheet column, starting from a designated row down to the last populated row in that column.
+Function iSum(cws as Worksheet, iCol as String, iStartRow As Byte) as Double
+    Dim lastRow as Long, y as Long
+    iSum = 0
+    with cws
+        On Error Resume Next
+        .ShowAllData
+        On Error Goto 0
+        lastRow = .Cells(.Rows.Count, iCol).End(XlUp).Row
+        If lastRow < iStartRow Then Exit Function
+        
+        For y = iStartRow To lastRow Step 1
+            iSum = iSum + .Cells(y, iCol).value
+        Next y
+    End with
+End Function
 
