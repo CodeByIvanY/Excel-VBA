@@ -1,5 +1,5 @@
 'PURPSE: TURN OFF/ON EXCEL APPLICATION SETTINGS FOR FASTER EXECUTION.
-Public Sub TurnOffApp()
+Sub TurnOffApp()
     With Application
         .DisplayAlerts = False
         .Calculation = xlCalculationManual
@@ -9,7 +9,7 @@ Public Sub TurnOffApp()
     End With
 End Sub
 
-Public Sub TurnOnApp()
+Sub TurnOnApp()
     With Application
         .DisplayAlerts = True
         .Calculation = xlCalculationAutomatic
@@ -50,3 +50,24 @@ End Function
             .Weight = xlThin
         End With
     Next edge
+
+Function iMax(ParamArray args() As Variant) as Double
+    Dim x As Long
+    iMax = args(0)
+    For x = 1 To Ubound(args)
+        If args(x) > iMax Then
+            iMax = args(x)
+        End If
+    Next X
+End Function
+
+Function iMaxArr(arr() as Double) as Double
+    Dim x As Byte
+    iMax = arr(0)
+    For x = 1 To Ubound(arr)
+        If arr(x) > iMax Then
+            iMax = arr(x)
+        End If
+    Next X
+End Function
+
