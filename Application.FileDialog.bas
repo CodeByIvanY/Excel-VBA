@@ -40,3 +40,7 @@ With Application.FileDialog(msoFileDialogOpen)
      Next lngCount 
 End With 
 
+Dim FSO As Object: Set FSO = CreateObject("Scripting.FileSystemObject")
+FileCount = FSO.GetFolder(iFolderPath).Files.Count
+
+
