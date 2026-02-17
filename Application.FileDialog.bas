@@ -52,7 +52,7 @@ Function iFileCount(iFolderPath As String, Optional Extension As String = "*") A
     If Extension = "*" Then
         iFileName = Dir(iFolderPath & "*.*")
     Else
-        FiileName = Dir(iFolderPath & "*." & Extension)
+        iFileName = Dir(iFolderPath & "*." & Extension)
     End If
     
     Do While iFileName <> ""
