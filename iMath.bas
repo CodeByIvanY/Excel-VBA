@@ -1,24 +1,23 @@
 'iMax accepts a variable number of arguments using ParamArray and returns the largest numeric value.
-Function iMax(ParamArray args() As Variant) as Double
+Function iMax(ParamArray args() As Variant) As Double
     Dim x As Long
     iMax = args(0)
-    For x = 1 To Ubound(args)
+    For x = 1 To UBound(args)
         If args(x) > iMax Then
             iMax = args(x)
         End If
-    Next X
+    Next x
 End Function
 
-Function iMin(ParamArray args() As Variant) as Double
+Function iMin(ParamArray args() As Variant) As Double
     Dim x As Long
-    iMax = args(0)
-    For x = 1 To Ubound(args)
-        If args(x) < iMax Then
-            iMax = args(x)
+    iMin = args(0)
+    For x = 1 To UBound(args)
+        If args(x) < iMin Then
+            iMin = args(x)
         End If
-    Next X
+    Next x
 End Function
-
 
 Function iMaxArr(arr() as Double) as Double
     Dim x As Byte
