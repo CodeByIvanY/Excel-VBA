@@ -16,7 +16,7 @@ With Application.FileDialog(msoFileDialogFilePicker)
      
      'Use the Show method to display the File Picker dialog box and return the user's action. 
      If .Show = -1 Then
-          FilePath = .SelectedItems(0)
+          FilePath = .SelectedItems(1)
      Else
           MsgBox "No File Selected"
           Exit Sub
