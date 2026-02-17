@@ -46,7 +46,7 @@ FileCount = FSO.GetFolder(iFolderPath).Files.Count
 Function iFileCount(iFolderPath As String, Optional Extension As String = "*") As Integer
     Dim iFileName As String
     iFileCount = 0
-    If Right(FolderPath, 1) <> "\" Then
+    If Right(iFolderPath, 1) <> "\" Then
         iFolderPath = iFolderPath & "\"
     End If
     If Extension = "*" Then
