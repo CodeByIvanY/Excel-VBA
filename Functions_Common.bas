@@ -70,7 +70,7 @@ Function iFoundRow(cws As Worksheet, iSearch As String, iCol As Long) As Long
 End Function
 
 'Finds the row of a value in a specified column; returns 0 if not found.
-Function iFoundRow(cws As Worksheet, iSearch As Variant, iCol As Variant) As Long
+Function iFoundRow(cws As Worksheet, iSearch As String, iCol As Variant) As Long
     Dim lastRow As Long
     Dim rng As Range
     Dim result As Variant
