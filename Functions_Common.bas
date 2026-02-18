@@ -51,6 +51,51 @@ End Function
         End With
     Next edge
 
+Function iFoundRow(cws As Worksheet, iSearch As String, iCol As Long) As Long
+    Dim lastRow As Long
+    Dim result As Variant
+    
+    With cws
+        lastRow = .Cells(.Rows.Count, iCol).End(xlUp).Row
+        result = Application.Match(iSearch, _
+                  .Range(.Cells(1, iCol), .Cells(lastRow, iCol)), 0)
+    End With
+    
+    If Not IsError(result) Then
+        iFoundRow = result
+    Else
+        iFoundRow = 0   'Return 0 if not found
+    End If
+
+End Function
+
+'Finds the row of a value in a specified column; returns 0 if not found.
+Function iFoundRow(cws As Worksheet, iSearch As Variant, iCol As Variant) As Long
+    Dim lastRow As Long
+    Dim rng As Range
+    Dim result As Variant
+    Dim colNum As Long
+
+    With cws
+        If IsNumeric(iCol) Then
+            colNum = CLng(iCol)
+        Else
+            colNum = .Columns(iCol).Column
+        End If
+        
+        lastRow = .Cells(.Rows.Count, colNum).End(xlUp).Row
+        
+        Set rng = .Range(.Cells(1, colNum), .Cells(lastRow, colNum))
+    End with
+
+    result = Application.Match(iSearch, rng, 0)
+    
+    If Not IsError(result) Then
+        iFoundRow = result
+    Else
+        iFoundRow = 0
+    End If
+End Function
 
 
 
