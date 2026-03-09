@@ -62,3 +62,33 @@ Function iFileCount(iFolderPath As String, Optional Extension As String = "*") A
 End Function
 
 
+
+Private iFcstRow As Integer
+Sub Testing()
+    With Application.FileDialog(msoFileDialogFolderPicker)
+        .Title = "Select a Folder"
+        .InitialFileName = "C:\Users\ivanyang1\Desktop"
+        If .Show = -1 Then
+            iFolderPath = .SelectedItems(1) & "\"
+        Else
+            MsgBox "No Folder Selected"
+            Exit Sub
+        End If
+    End With
+
+    iFcstRow = 1
+    Dim iFileName As String
+    iFileName = Dir(iFolderPath & "*.xlsx")
+    Dim owb As Workbook
+    Do While iFileName <> ""
+        Set owb = Workbooks.Open(iFolderPath & iFileName, ReadOnly:=True)
+        iResult = Function_General.iLookUp(owb.Worksheets("Settings"), "Run Forecasting Module", iFcstRow)
+        MsgBox iFcstRow
+        MsgBox iResult
+        owb.Close
+        iFileName = Dir
+    Loop
+End Sub
+
+
+
