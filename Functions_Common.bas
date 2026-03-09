@@ -75,21 +75,16 @@ Function iFoundRow(cws As Worksheet, iSearch As String, iCol As Variant) As Long
     Dim rng As Range
     Dim result As Variant
     Dim colNum As Long
-
     With cws
         If IsNumeric(iCol) Then
             colNum = CLng(iCol)
         Else
             colNum = .Columns(iCol).Column
         End If
-        
         lastRow = .Cells(.Rows.Count, colNum).End(xlUp).Row
-        
         Set rng = .Range(.Cells(1, colNum), .Cells(lastRow, colNum))
     End with
-
     result = Application.Match(iSearch, rng, 0)
-    
     If Not IsError(result) Then
         iFoundRow = result
     Else
@@ -97,5 +92,15 @@ Function iFoundRow(cws As Worksheet, iSearch As String, iCol As Variant) As Long
     End If
 End Function
 
+Function iFoundRow(cws As Worksheet, iSearch As String, iCol As Byte) As Integer
+    Dim lastRow As Integer
+    Dim result As Variant
+    With cws
+        lastRow = .Cells(.Rows.Count, iCol).End(xlUp).Row
+        On Error Resume Next
+        iFoundRow = Application.Match(iSearch, .Range(.Cells(1, iCol), .Cells(lastRow, iCol)), 0)
+        On Error GoTo 0
+    End With
+End Function
 
 
