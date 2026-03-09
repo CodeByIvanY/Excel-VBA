@@ -103,4 +103,20 @@ Function iFoundRow(cws As Worksheet, iSearch As String, iCol As Byte) As Integer
     End With
 End Function
 
+Function iLookUp(cws As Worksheet, iStr As String, iFcstRow As Integer) As String
+    If cws.Cells(iFcstRow, 1).Value = iStr Then
+        iLookUp = cws.Cells(iFcstRow, "H").Value
+        Exit Function
+    End If
+    Dim lastRow As Integer
+    Dim iRng As Range
+    With cws
+        lastRow = .Cells(.Rows.Count, 1).End(xlUp).Row
+        Set iRng = .Range("A1:A" & lastRow)
+        iFcstRow = Application.Match(iStr, iRng, 0)
+        iLookUp = .Cells(iFcstRow, "H").Value
+    End With
+End Function
+
+
 
