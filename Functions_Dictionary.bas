@@ -1,10 +1,10 @@
-‘CREATE THE INDEX MAP ONCE AND RETURNS IT AS A DICTIONARY.
-Function BuildDictionaryIndex(dict As Object) As Object
+'CREATE THE INDEX MAP ONCE AND RETURNS IT AS A DICTIONARY.
+Function BuildDictIndex(dict As Object) As Object
     Dim dictIndex As Object
     Dim i As Long
 
     If dict Is Nothing Or dict.Count = 0 Then
-        Set BuildDictionaryIndex = CreateObject("Scripting.Dictionary")
+        Set BuildDictIndex = CreateObject("Scripting.Dictionary")
         Exit Function
     End If
 
@@ -14,9 +14,8 @@ Function BuildDictionaryIndex(dict As Object) As Object
         dictIndex(dict.Keys()(i)) = i + 1   '1-based index
     Next i
 
-    Set BuildDictionaryIndex = dictIndex
+    Set BuildDictIndex = dictIndex
 End Function
-
 
 
 
