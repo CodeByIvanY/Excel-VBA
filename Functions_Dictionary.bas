@@ -1,3 +1,25 @@
+‘CREATE THE INDEX MAP ONCE AND RETURNS IT AS A DICTIONARY.
+Function BuildDictionaryIndex(dict As Object) As Object
+    Dim dictIndex As Object
+    Dim i As Long
+
+    If dict Is Nothing Or dict.Count = 0 Then
+        Set BuildDictionaryIndex = CreateObject("Scripting.Dictionary")
+        Exit Function
+    End If
+
+    Set dictIndex = CreateObject("Scripting.Dictionary")
+
+    For i = 0 To dict.Count - 1
+        dictIndex(dict.Keys()(i)) = i + 1   '1-based index
+    Next i
+
+    Set BuildDictionaryIndex = dictIndex
+End Function
+
+
+
+
 'CLONE THE KEYS FROM ORIGINAL DICTIONARY
 Function CloneDict(Dict As Object) As Object
   Dim newDict
